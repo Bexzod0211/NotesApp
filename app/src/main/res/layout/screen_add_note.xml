@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="uz.gita.notesapp.presentation.ui.addnote.AddNoteScreen"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp"
+                />
+            <EditText
+                android:id="@+id/input_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toEndOf="@id/btn_back"
+                android:hint="Title"
+                android:textColorHint="#CDCCCC"
+                android:textSize="24sp"
+                android:background="@color/white"
+                android:layout_marginStart="16dp"
+                android:paddingEnd="10dp"
+                />
+            <ImageButton
+                android:id="@+id/action_undo"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="?selectableItemBackground"
+                android:scaleType="centerInside"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_undo"
+                app:layout_constraintEnd_toStartOf="@id/action_redo"
+                app:tint="@color/bg_rich_buttons" />
+
+            <ImageButton
+                android:id="@+id/action_redo"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="?selectableItemBackground"
+                android:scaleType="centerInside"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_redo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:tint="@color/bg_rich_buttons" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        app:layout_constraintTop_toBottomOf="@id/app_bar"
+        android:background="#F2F2F2"/>
+    
+    <jp.wasabeef.richeditor.RichEditor
+        android:id="@+id/input_content"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/view1"
+        app:layout_constraintBottom_toTopOf="@id/horizontalScrollView"
+        android:background="@color/color17"
+        android:textColorHint="#CDCCCC"
+        android:gravity="top"
+        android:paddingTop="10dp"
+        android:paddingHorizontal="16dp"
+        android:layout_height="0dp"/>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FAFAFA">
+
+    <ImageButton
+        android:id="@+id/action_bold"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:background="?selectableItemBackground"
+        android:scaleType="centerInside"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_bold"
+        app:tint="@color/bg_rich_buttons" />
+
+    <ImageButton
+        android:id="@+id/action_italic"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:background="?selectableItemBackground"
+        android:scaleType="centerInside"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_italic"
+        app:tint="@color/bg_rich_buttons" />
+
+
+
+    <ImageButton
+        android:id="@+id/action_strikethrough"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:background="?selectableItemBackground"
+        android:scaleType="centerInside"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_strikethrough"
+        app:tint="@color/bg_rich_buttons" />
+
+    <ImageButton
+        android:id="@+id/action_underline"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:background="?selectableItemBackground"
+        android:scaleType="centerInside"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_underline"
+        app:tint="@color/bg_rich_buttons" />
+
+        <ImageButton
+            android:id="@+id/action_txt_color"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:background="?selectableItemBackground"
+            android:scaleType="centerInside"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_palette"
+            app:tint="@color/bg_rich_buttons" />
+
+       <!-- <ImageButton
+            android:id="@+id/action_subscript"
+            android:layout_width="68dp"
+            android:layout_height="56dp"
+            android:background="?selectableItemBackground"
+            android:scaleType="centerInside"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_subscript"
+            app:tint="@color/bg_rich_buttons" />
+
+        <ImageButton
+            android:id="@+id/action_superscript"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="?selectableItemBackground"
+            android:scaleType="centerInside"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_superscript"
+            app:tint="@color/bg_rich_buttons" />-->
+        <ImageButton
+            android:id="@+id/action_save"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:background="?selectableItemBackground"
+            android:scaleType="centerInside"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_save"
+            app:tint="@color/bg_rich_buttons" />
+
+
+    </LinearLayout>
+
+    </HorizontalScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
